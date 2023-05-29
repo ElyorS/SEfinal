@@ -62,7 +62,7 @@ for i in range(0,4):
     {
         deleteBook(i, apiKey)
     }
-for i in range(200,205):
+for i in range(200,204):
     {
         deleteBook(i, apiKey)
     }
