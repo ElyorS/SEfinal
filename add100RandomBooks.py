@@ -34,6 +34,17 @@ def addBook(book, apiKey):
     else:
         raise Exception(f"Error code {r.status_code} and text {r.text}, while trying to add book {book}.")
 
+def deleteBook(id, apiKey):
+    r = requests.delete(
+        f"{APIHOST}/api/v1/books", 
+        headers = {
+            "Content-type": "application/json",
+            "X-API-Key": apiKey
+            },
+    )
+
+
+
 # Get the Auth Token Key
 apiKey = getAuthToken()
 
@@ -46,3 +57,12 @@ for i in range(0, 25):
     book = {"id":i, "title": fakeTitle, "author": fakeAuthor, "isbn": fakeISBN}
     # add the new random "fake" book using the API
     addBook(book, apiKey) 
+
+for i in range(0,4):
+    {
+        deleteBook(i, apiKey)
+    }
+for i in range(200,205):
+    {
+        deleteBook(i, apiKey)
+    }
